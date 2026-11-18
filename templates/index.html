@@ -5,209 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartBudget</title>
-    <th>Actions</th>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-    <style>
 
-        body{
-            background:#0F0F0F;
-            color:white;
-        }
-
-        .navbar{
-            background:#111111;
-            border-bottom:1px solid #D4AF37;
-        }
-
-        .brand{
-            color:#D4AF37;
-            font-size:1.5rem;
-            font-weight:700;
-            letter-spacing:3px;
-        }
-
-        .hero{
-            padding:60px 0;
-            text-align:center;
-        }
-
-        .hero h1{
-            font-size:3rem;
-            font-weight:bold;
-        }
-
-        .card-budget{
-            background:#1A1A1A;
-            border:1px solid rgba(212,175,55,0.3);
-            border-radius:20px;
-            padding:25px;
-        }
-
-        .amount{
-            color:#D4AF37;
-            font-size:2rem;
-            font-weight:bold;
-        }
-
-        .btn-gold{
-            background:#D4AF37;
-            color:black;
-            font-weight:bold;
-            border:none;
-        }
-
-        .btn-gold:hover{
-            background:#c79f2d;
-        }
-
-        table{
-            border-radius:15px;
-            overflow:hidden;
-        }
-
-        h3{
-            color:#D4AF37;
-        }
-
-    </style>
 
 </head>
 
 <body>
 
-    <nav class="navbar">
-        <div class="container">
-            <span class="brand">
-                SMARTBUDGET
-            </span>
-        </div>
-    </nav>
+<div class="gold-glow"></div>
 
-    <section class="hero">
+<nav class="navbar">
+    <div class="container-fluid px-5">
 
-        <div class="container">
+        <span class="brand">
+            SMARTBUDGET
+        </span>
 
-            <h1>
-                Prenez le contrôle de vos finances
-            </h1>
+    </div>
+</nav>
 
-            <p class="text-secondary mt-3">
-                Suivez vos dépenses et gardez une vue claire sur votre budget.
-            </p>
+<section class="hero">
 
-            <a href="/ajouter" class="btn btn-gold mt-3">
-                + Nouvelle dépense
+    <div class="container text-center">
+
+        <h1>
+            Gérez vos finances intelligemment
+        </h1>
+
+        <p>
+            Contrôlez vos revenus, dépenses et objectifs financiers
+            grâce à une expérience moderne et sécurisée.
+        </p>
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap mt-5">
+
+            <a href="/register" class="btn btn-gold">
+                Créer un compte
             </a>
-            <a href="/ajouter_revenu" class="btn btn-success">
-                + Nouveau revenu
-            </a>
-            <a href="/reinitialiser"
-   class="btn btn-danger"
-   onclick="return confirm('Voulez-vous vraiment réinitialiser tout le budget ?');">
-   Réinitialiser le budget
-</a>
 
+            <a href="/login" class="btn btn-outline">
+                Se connecter
+            </a>
 
         </div>
 
-    </section>
+        <div class="features mt-5">
 
-    <div class="container">
+            <p> Gestion des revenus</p>
 
-        <div class="row g-4">
+            <p> Gestion des dépenses</p>
 
-            <div class="col-md-4">
+            <p> Tableau de bord intelligent</p>
 
-                <div class="card-budget text-center">
-
-                    <h5>Total des dépenses</h5>
-
-                    <div class="amount">
-                        {{ total_depenses }} FCFA
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4">
-
-                <div class="card-budget text-center">
-
-                    <h5>Nombre d'opérations</h5>
-
-                    <div class="amount">
-                        {{ depenses|length }}
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4">
-
-                <div class="card-budget text-center">
-
-                    <h5>Budget restant</h5>
-                         {{ solde }} FCFA
-                    <div class="amount">
-                        
-                    </div>
-
-                </div>
-
-            </div>
+            <p> Statistiques financières</p>
 
         </div>
 
     </div>
 
-    <div class="container mt-5">
-
-        <h3 class="mb-4">
-            Historique des dépenses
-        </h3>
-
-        <table class="table table-dark table-striped">
-
-            <thead>
-
-                <tr>
-                    <th>Description</th>
-                    <th>Montant</th>
-                    <th>Catégorie</th>
-                    <th>Date</th>
-                </tr>
-
-            </thead>
-
-            <tbody>
-
-                {% for depense in depenses %}
-
-               <tr>
-    <td>{{ depense[1] }}</td>
-    <td>{{ depense[2] }} FCFA</td>
-    <td>{{ depense[3] }}</td>
-    <td>{{ depense[4] }}</td>
-
-    <td>
-        <a href="/supprimer_depense/{{ depense[0] }}"
-           class="btn btn-danger btn-sm">
-           Supprimer
-        </a>
-    </td>
-</tr>
-
-                {% endfor %}
-
-            </tbody>
-
-        </table>
-
-    </div>
+</section>
 
 </body>
 
