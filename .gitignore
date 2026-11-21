@@ -1,4 +1,6 @@
-
-fix_db.py
-reset_old_data.py
-test_db.py
+venv/
+__pycache__/
+*.pyc
+database/*.db
+*.db
+.env
