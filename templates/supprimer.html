@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Supprimer mon compte - SmartBudget</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="auth-container">
+    <h2 class="auth-title" style="color:#ef4444;">Supprimer mon compte</h2>
+    <p style="color:#ccc;">Cette action est définitive. Tes dépenses, revenus et objectifs seront supprimés.</p>
+    {% if error %}<div class="alert alert-danger">{{ error }}</div>{% endif %}
+    <form method="POST" onsubmit="return confirm('Tu es sûr ? C’est définitif.');">
+        <label class="form-label">Mot de passe pour confirmer :</label>
+        <input type="password" name="mot_de_passe" class="form-control" required>
+        <button type="submit" class="btn btn-danger mt-3 w-100">Supprimer définitivement mon compte</button>
+        <a href="/dashboard" class="btn btn-outline mt-2 w-100">Annuler, retourner au dashboard</a>
+    </form>
+</div>
+</body>
+</html>

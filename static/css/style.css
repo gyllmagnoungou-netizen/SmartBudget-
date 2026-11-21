@@ -638,6 +638,121 @@ label{
     }
 
 }
+.btn-danger{
+
+    background:#dc2626;
+
+    border:none;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.btn-danger:hover{
+
+    background:#b91c1c;
+
+    transform:translateY(-3px);
+
+}
+
+.chart-container{
+
+    width: 400px;
+    height: 250px;
+
+    margin: 0 auto;
+
+}
+
+.ai-box{
+
+    background:rgba(212,175,55,0.08);
+
+    border:1px solid rgba(212,175,55,0.2);
+
+    border-radius:15px;
+
+    padding:20px;
+
+    color:white;
+
+    line-height:1.8;
+
+}
+
+.ai-box p{
+
+    margin:0;
+
+}
+.ai-box{
+
+    background:rgba(212,175,55,.08);
+
+    border:1px solid rgba(212,175,55,.2);
+
+    border-radius:15px;
+
+    padding:20px;
+
+    color:white;
+
+    line-height:1.8;
+
+}
+
+.progress{
+
+    background:#1A1A1A;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    font-weight:bold;
+
+    font-size:14px;
+
+}
+
+.form-control{
+
+    background:#1A1A1A;
+
+    border:1px solid #D4AF37;
+
+    color:white;
+
+}
+
+.form-control:focus{
+
+    background:#1A1A1A;
+
+    color:white;
+
+    border-color:#D4AF37;
+
+    box-shadow:0 0 10px rgba(212,175,55,.4);
+
+}
+
+.form-label{
+
+    color:#D4AF37;
+
+    font-weight:600;
+
+}
+
+
 
 /* =========================
    MOBILE
